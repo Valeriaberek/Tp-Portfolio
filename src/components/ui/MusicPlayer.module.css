@@ -1,0 +1,83 @@
+.player {
+  position: fixed;
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  left: max(16px, env(safe-area-inset-left, 0px));
+  z-index: 20;
+  box-sizing: border-box;
+  width: 104px;
+  padding: 8px 10px;
+  border: 1px solid #c7c1d5;
+  border-radius: 20px;
+  color: #514963;
+  background: #fffaf5;
+  box-shadow: 0 6px 24px #211b3326;
+  font-family: system-ui, sans-serif;
+}
+
+.player[data-mode='night'] {
+  color: #f1eaf9;
+  background: #302c50;
+  border-color: #777193;
+  color-scheme: dark;
+}
+
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.playButton:hover { background: #a9b7db26; }
+.playButton:disabled { cursor: wait; }
+
+.volumeLabel {
+  display: block;
+  text-align: center;
+  font-size: 0.65rem;
+}
+
+.volume {
+  display: block;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  accent-color: #746184;
+  cursor: pointer;
+}
+
+.playButton:focus-visible,
+.volume:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+.player[data-mode='night'] .volume {
+  accent-color: #c6bce0;
+}
+
+.error {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  box-sizing: border-box;
+  width: min(240px, calc(100vw - 32px));
+  margin: 0;
+  padding: 12px;
+  border: 1px solid currentColor;
+  border-radius: 14px;
+  color: inherit;
+  background: inherit;
+  font-size: 0.8rem;
+}

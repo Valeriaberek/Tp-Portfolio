@@ -1,0 +1,67 @@
+.form {
+  display: grid;
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 14px;
+  color: var(--portfolio-text);
+  background: var(--portfolio-button);
+  font: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field [aria-invalid='true'] {
+  border-color: var(--portfolio-error);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--portfolio-focus);
+  outline-offset: 3px;
+}
+
+.hint,
+.error,
+.status {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.error {
+  color: var(--portfolio-error);
+}
+
+.button {
+  justify-self: start;
+  padding: 12px 22px;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 24px;
+  color: var(--portfolio-text);
+  background: var(--portfolio-hover);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.status {
+  min-height: 1.6em;
+}

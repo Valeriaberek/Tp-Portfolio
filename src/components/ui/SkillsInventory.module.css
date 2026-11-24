@@ -1,0 +1,126 @@
+.inventory {
+  max-width: 1080px;
+  margin: 48px auto 0;
+  padding: clamp(20px, 4vw, 36px);
+  border: 2px solid var(--portfolio-border);
+  border-radius: 28px;
+  background: var(--portfolio-button);
+  box-shadow: 0 7px 0 #74618420, 0 20px 48px #211b3310;
+  scroll-margin-top: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.practiceLabel {
+  padding: 8px 12px;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 10px;
+  background: var(--portfolio-hover);
+  font-size: 0.75rem;
+}
+
+.intro {
+  margin: 20px 0 28px;
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.group {
+  --accent: #e5b3c4;
+  padding: 22px;
+  border: 1px solid var(--portfolio-border);
+  border-top: 4px solid var(--accent);
+  border-radius: 18px;
+}
+
+.group:nth-child(4n + 2) { --accent: #c6bce0; }
+.group:nth-child(4n + 3) { --accent: #afd0d6; }
+.group:nth-child(4n + 4) { --accent: #bdd0a8; }
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.emblem {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  clip-path: polygon(20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 80%, 0 20%);
+  color: #393449;
+  background: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.group h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 11px;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 8px;
+  background: var(--portfolio-hover);
+  box-shadow: 0 3px 0 #74618420;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgeMark {
+  color: var(--portfolio-text);
+  font-size: 0.7rem;
+}
+
+.notice {
+  padding: 20px;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 16px;
+  background: var(--portfolio-hover);
+}
+
+@media (max-width: 680px) {
+  .groups { grid-template-columns: 1fr; }
+  .group { padding: 18px; }
+}

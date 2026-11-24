@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+.brand,
+.links a {
+  color: var(--portfolio-text, #514963);
+  text-decoration: none;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  display: block;
+  padding: 10px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.links a:hover {
+  background: var(--portfolio-hover, #f2edf7);
+}
+
+.header a:focus-visible {
+  outline: 3px solid var(--portfolio-focus, #746184);
+  outline-offset: 3px;
+}
+
+.skipLink {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  z-index: 1;
+  padding: 10px;
+  color: var(--portfolio-text, #514963);
+  background: var(--portfolio-button, #fff);
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}

@@ -1,0 +1,66 @@
+.space {
+  height: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+
+.link {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 8px 18px 8px 10px;
+  border: 1px solid var(--portfolio-border, #c7c1d5);
+  border-radius: 32px;
+  color: var(--portfolio-text, #514963);
+  background: var(--portfolio-button, #fffaf5);
+  box-shadow: 0 6px 24px #211b3326;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  background: var(--portfolio-hover, #ece6f5);
+}
+
+.link:focus-visible {
+  outline: 3px solid var(--portfolio-focus, #746184);
+  outline-offset: 4px;
+}
+
+.bird {
+  flex-shrink: 0;
+  animation: float 2s ease-in-out 2;
+}
+
+.wing {
+  transform-box: fill-box;
+  transform-origin: 80% 50%;
+}
+
+.link:hover .wing,
+.link:focus-visible .wing {
+  animation: flutter 0.5s ease-in-out 2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes flutter {
+  0%, 100% { transform: rotate(-25deg); }
+  50% { transform: rotate(-50deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bird,
+  .link:hover .wing,
+  .link:focus-visible .wing {
+    animation: none;
+  }
+}

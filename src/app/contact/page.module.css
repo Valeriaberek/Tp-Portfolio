@@ -1,0 +1,38 @@
+.page {
+  width: min(580px, 100%);
+  margin: 40px auto;
+}
+
+.backLink {
+  color: var(--portfolio-text);
+  text-underline-offset: 4px;
+}
+
+.backLink:focus-visible {
+  outline: 3px solid var(--portfolio-focus);
+  outline-offset: 4px;
+}
+
+.card {
+  margin-top: 20px;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--portfolio-border);
+  border-radius: 28px;
+  background: var(--portfolio-button);
+  box-shadow: 0 16px 48px #211b3314;
+}
+
+.envelope {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.card h1 {
+  margin: 12px 0;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+}
+
+.card > p {
+  margin: 0 0 28px;
+}

@@ -1,0 +1,14 @@
+.label {
+  display: block;
+  padding: 8px 14px;
+  border: 1px solid var(--portfolio-border);
+  border-radius: 20px;
+  color: var(--portfolio-text);
+  background: var(--portfolio-button);
+  box-shadow: 0 4px 16px #211b3320;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}

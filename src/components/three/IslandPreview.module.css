@@ -1,0 +1,17 @@
+.preview {
+  margin: 20px 0 24px;
+}
+
+.scene {
+  height: clamp(390px, 65vh, 680px);
+  overflow: hidden;
+  cursor: grab;
+}
+
+.scene:active {
+  cursor: grabbing;
+}
+
+.loading {
+  padding-top: 140px;
+}
