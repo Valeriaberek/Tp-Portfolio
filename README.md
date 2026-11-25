@@ -85,19 +85,3 @@ Ils ne remplacent pas les essais visuels, l’écoute et la lecture réelle de l
 6. Ouvrir `/projets` : données publiées ou message de liste vide, selon la base.
 7. Ouvrir `/competences` : badges regroupés selon `skills.category`, ou inventaire vide.
 
-## Ce qui reste à réaliser pour le devoir
-
-- Les fiches `/projets/[slug]`, avec un état de projet introuvable.
-- La recherche et la pagination dans l’URL.
-- Les images des projets dans Supabase Storage, affichées avec `next/image`.
-- Une mesure Lighthouse avant/après une optimisation, en conservant les rapports.
-
-Le formulaire Contact valide les champs localement ; aucun message n’est envoyé.
-La page Compétences lit `skills.name` et `skills.category` dans Supabase, sans jauges
-ni notes. Si la table est vide, aucun badge local n’est ajouté en remplacement.
-L’illustration de la liste Projets est un visuel d’attente, pas une capture de chaque projet.
-
-## Usage de l’IA
-
-[La trace de collaboration](docs/usage-ia.md) résume les décisions et ce que
-l’étudiante doit encore tester et reformuler pour sa soutenance.
