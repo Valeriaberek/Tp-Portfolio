@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-
+//useRef contient l'élement à observer
 export function useSceneVisibility() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [hasBeenVisible, setHasBeenVisible] = useState(false)
@@ -12,7 +12,7 @@ export function useSceneVisibility() {
     const container = containerRef.current
     if (!container) return
 
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const preference = globalThis.matchMedia('(prefers-reduced-motion: reduce)')
     const updatePreference = () => setReducedMotion(preference.matches)
     updatePreference()
     preference.addEventListener('change', updatePreference)

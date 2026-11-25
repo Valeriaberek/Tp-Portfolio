@@ -15,6 +15,7 @@ type FloatingIslandProps = {
   isAnimating: boolean
   reducedMotion: boolean
 }
+//construit le sol et place les éléments.
 
 export default function FloatingIsland({ isAnimating, reducedMotion }: FloatingIslandProps) {
   return (

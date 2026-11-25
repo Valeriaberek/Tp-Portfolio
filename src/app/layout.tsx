@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   icons: {
     icon: { url: '/favicon.svg?v=heart-transparent', type: 'image/svg+xml' },
   },
-  description: 'Le portfolio 3D d’une étudiante en Master 1 Développement Web : parcours, compétences en cours de pratique et projet d’île interactive.',
+ 
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

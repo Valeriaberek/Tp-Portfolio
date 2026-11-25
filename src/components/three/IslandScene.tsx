@@ -10,7 +10,7 @@ type IslandSceneProps = {
   autoRotate: boolean
   reducedMotion: boolean
 }
-
+//installe le Canvas, la caméra et les lumières.
 export default function IslandScene({ autoRotate, reducedMotion }: IslandSceneProps) {
   // Le sélecteur renvoie un booléen : l’éclairage suit le même mode que le bouton HTML.
   const isNight = useThemeStore((state) => state.mode === 'night')

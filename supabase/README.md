@@ -65,6 +65,36 @@ ne récupère pas le contenu des lignes.
 Les anciens modèles de création pour une base vide ont été retirés : ils ne
 correspondaient pas à ce schéma. Ne pas recréer ni supprimer les tables existantes.
 
+## Ajouter les premiers contenus
+
+`seed_portfolio.sql` est adapté aux tables existantes. Il prépare :
+
+- 12 compétences dans les quatre catégories du portfolio, dont Supabase ;
+- le seul projet réel décrit ici : « Portfolio 3D kawaii », slug `portfolio` ;
+- les associations entre ce projet et les 12 compétences.
+
+Le script est préparé localement : il n’a pas encore été exécuté sur ta base.
+Les identifiants sont générés par la base, comme dans le schéma SQL du cours.
+Les champs `level`, les images et les liens externes ne sont pas renseignés.
+
+1. Ouvrir `seed_portfolio.sql` et relire les noms, catégories et textes.
+2. Dans le bon projet Supabase, ouvrir **SQL Editor > New query**.
+3. Copier tout le script, puis cliquer sur **Run** avec le rôle administrateur
+   habituel du SQL Editor (`postgres`), pas avec la clé publique du site.
+4. Le résultat doit afficher le projet `portfolio`, une date `published_at` et
+   `nombre_de_competences` égal à 12 sur une base initialement vide.
+5. Recharger `/competences` et `/projets` dans le navigateur.
+
+`BEGIN` et `COMMIT` regroupent les insertions dans une transaction. Une erreur
+empêche leur validation. `ON CONFLICT ... DO NOTHING` évite les doublons si le
+script est relancé et préserve le contenu des lignes existantes.
+
+Si un projet de slug `portfolio` existe déjà en brouillon, le script ne le publie
+pas à ta place : relire son contenu dans le Table Editor, puis renseigner
+`published_at` pour le rendre visible. Des associations déjà présentes sont
+conservées ; le compteur peut donc dépasser 12 sur une base déjà remplie.
+Si le SQL Editor affiche une erreur, copier son message avant de modifier le script.
+
 ## Images Storage : prochaine étape
 
 Les images des projets ne sont pas encore connectées au site. Depuis le tableau

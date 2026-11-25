@@ -9,10 +9,10 @@ import BackToIsland from './BackToIsland'
 type PortfolioThemeProps = {
   children: ReactNode
 }
-
+//au montage du composant dans le navigateur, il restaure la préférence
 export default function PortfolioTheme({ children }: PortfolioThemeProps) {
   // Ce sélecteur lit le mode ET abonne le composant à ses changements.
-  // Le hook gère l’abonnement : aucun appel manuel à subscribe() n’est nécessaire.
+
   const mode = useThemeStore((state) => state.mode)
   // Un second sélecteur récupère l’action à appeler au clic.
   const toggleMode = useThemeStore((state) => state.toggleMode)
@@ -20,7 +20,7 @@ export default function PortfolioTheme({ children }: PortfolioThemeProps) {
 
   useEffect(() => {
     // Après montage dans le navigateur, on restaure la préférence sauvegardée.
-    // void indique que nous n’attendons pas la promesse dans cet effet.
+   
     void useThemeStore.persist.rehydrate()
   }, [])
 

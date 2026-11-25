@@ -1,5 +1,7 @@
 # Portfolio 3D
 
+![Illustration low-poly de l’île du portfolio](public/images/portfolio-island.svg)
+
 Portfolio de Master en Next.js App Router et TypeScript strict. L’accueil présente
 une île low-poly ; ses objets et le menu HTML ouvrent les mêmes rubriques.
 
@@ -21,6 +23,11 @@ Ouvrir http://localhost:3000, ou le port indiqué dans le terminal. Redémarrer 
 serveur après une modification des variables d’environnement.
 L’accueil, À propos et Contact restent consultables sans Supabase ; les pages
 Projets et Compétences affichent alors un message de configuration manquante.
+
+Si la connexion fonctionne mais que les listes sont vides, suivre
+[l’ajout des premiers contenus](supabase/README.md#ajouter-les-premiers-contenus).
+Le fichier `supabase/seed_portfolio.sql` doit être relu puis exécuté dans le
+SQL Editor : sa présence dans le dépôt n’ajoute aucune ligne automatiquement.
 
 ## Organisation
 
@@ -68,8 +75,27 @@ Les tests couvrent la validation du formulaire, la persistance du thème, les
 réponses Supabase simulées et l’intégrité du fichier musical.
 Ils ne remplacent pas les essais visuels, l’écoute et la lecture réelle de la base.
 
+À vérifier dans le navigateur :
 
+1. Ouvrir chaque rubrique depuis l’île et depuis le menu, puis revenir à l’accueil.
+2. Passer en nuit et recharger : le ciel, les fenêtres et le bouton restent cohérents.
+3. Tester la rotation, le zoom et la figurine, puis activer la réduction des animations.
+4. Avec Tab et Entrée, parcourir les liens ; vérifier le formulaire avec des champs vides.
+5. Vérifier les pages et les boutons flottants sur un écran de téléphone.
+6. Ouvrir `/projets` : données publiées ou message de liste vide, selon la base.
+7. Ouvrir `/competences` : badges regroupés selon `skills.category`, ou inventaire vide.
 
+## Ce qui reste à réaliser pour le devoir
+
+- Les fiches `/projets/[slug]`, avec un état de projet introuvable.
+- La recherche et la pagination dans l’URL.
+- Les images des projets dans Supabase Storage, affichées avec `next/image`.
+- Une mesure Lighthouse avant/après une optimisation, en conservant les rapports.
+
+Le formulaire Contact valide les champs localement ; aucun message n’est envoyé.
+La page Compétences lit `skills.name` et `skills.category` dans Supabase, sans jauges
+ni notes. Si la table est vide, aucun badge local n’est ajouté en remplacement.
+L’illustration de la liste Projets est un visuel d’attente, pas une capture de chaque projet.
 
 ## Usage de l’IA
 

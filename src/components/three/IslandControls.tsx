@@ -2,7 +2,7 @@ import { OrbitControls } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef, useState, type ComponentRef } from 'react'
 import { MathUtils } from 'three'
-
+//gère la rotation et le zoom.
 type IslandControlsProps = {
   autoRotate: boolean
   reducedMotion: boolean
